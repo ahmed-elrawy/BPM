@@ -1,0 +1,12 @@
+.sidebar { width: 300px; transition: 0.3s; border-right: 1px solid #ddd; height: 100vh; }
+    .sidebar.collapsed { width: 80px; }
+    .sidebar.collapsed ::ng-deep .p-panelmenu-header-content span { display: none; }
+
+
+
+
+
+
+
+
+    
