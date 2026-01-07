@@ -1,0 +1,16 @@
+<div class="app-container">
+  <div class="sidebar" [class.collapsed]="isCollapsed()">
+    <div class="header">
+      <p-button icon="pi pi-bars" [rounded]="true" [text]="true" (onClick)="toggleCollapse()" />
+    </div>
+
+    @if (menuItems().length > 0) {
+    <p-panelmenu [model]="menuItems()" />
+    } @else {
+    <p class="placeholder">No items loaded</p>
+    }
+  </div>
+  <div class="main-content" [class.sidebar-collapsed]="sidebarCollapsed()">
+    <router-outlet></router-outlet>
+  </div>
+</div>
