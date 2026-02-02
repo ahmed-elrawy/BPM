@@ -1,8 +1,27 @@
 import { Routes } from '@angular/router';
 import { MAIN_ROUTES } from './core/components/header/models/header';
 import { MainLayout } from './core/components/main-layout/main-layout';
+import { AuthGuard } from './core/guards/guard';
+import { RouteDataHelper } from './core/utils/route-data';
 
 export const routes: Routes = [
+  //  {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   canActivate: [AuthGuard],
+  //   data: RouteDataHelper.withRoles(['admin', 'super-admin'])
+  // },
+  // {
+  //   path: 'dashboard',
+  //   component: DashboardComponent,
+  //   canActivate: [AuthGuard],
+  //   data: RouteDataHelper.withRoles(['user'], '/task-dashboard')
+  // },
+  // {
+  //   path: 'public',
+  //   component: PublicComponent,
+  //   data: RouteDataHelper.public()
+  // }
   {
     path: '',
     component: MainLayout, // Wrap routes in MainLayout
@@ -14,10 +33,19 @@ export const routes: Routes = [
       },
       {
         path: MAIN_ROUTES.APPLICTIONS,
-        loadChildren: () =>
-          import('../app/features/applications/applications.routes').then(
-            (m) => m.ApplicationsRoutes
+        canActivate: [AuthGuard],
+        data: RouteDataHelper.public(),
+        loadComponent: () => import('../app/features/applications/applications').then((m) => m.Applications),
+
+      },
+       {
+        path: MAIN_ROUTES.APPLICTION,
+        canActivate: [AuthGuard],
+         loadChildren: () =>
+          import('../app/features/application/application.routes').then(
+            (m) => m.ApplicationRoutes
           ),
+
       },
       {
         path: MAIN_ROUTES.DASHBOARD,

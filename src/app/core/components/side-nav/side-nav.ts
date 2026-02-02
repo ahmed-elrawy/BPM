@@ -3,11 +3,10 @@ import { SidebarService } from '../../services/sidebar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
-  imports: [PanelMenuModule, ButtonModule, CommonModule,RouterOutlet],
+  imports: [PanelMenuModule, ButtonModule, CommonModule],
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
 })

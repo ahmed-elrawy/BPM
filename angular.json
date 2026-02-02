@@ -39,7 +39,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "1000kB",
                   "maximumError": "1MB"
                 },
                 {
@@ -48,7 +48,40 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "test": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractLicenses": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
+            },
+            "uat": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractLicenses": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.uat.ts"
+                }
+              ]
             },
             "development": {
               "optimization": false,
@@ -66,6 +99,12 @@
             },
             "development": {
               "buildTarget": "BPM:build:development"
+            },
+            "test": {
+              "buildTarget": "BPM:build:test"
+            },
+            "uat": {
+              "buildTarget": "BPM:build:uat"
             }
           },
           "defaultConfiguration": "development"

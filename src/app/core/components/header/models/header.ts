@@ -1,6 +1,7 @@
 import { MenuItem } from 'primeng/api';
 
 export enum MAIN_ROUTES {
+  APPLICTION = 'application',
   APPLICTIONS = 'applications',
   TASK_DASHBOARD = 'task-dashboard',
   DASHBOARD = 'dashboard',
