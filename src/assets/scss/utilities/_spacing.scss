@@ -1,0 +1,73 @@
+// ==========================================
+// SPACING UTILITIES - Auto-generated classes
+// ==========================================
+
+@use 'sass:map';
+@use '../settings' as settings;
+
+// Spacing directions
+$spacing-directions: (
+  '': '',                    // all sides (p, m)
+  't': '-top',              // top (pt, mt)
+  'b': '-bottom',           // bottom (pb, mb)
+  'l': '-left',             // left (pl, ml)
+  'r': '-right',            // right (pr, mr)
+  'x': ('x'),               // horizontal (px, mx) - FIXED
+  'y': ('y')                // vertical (py, my) - FIXED
+);
+
+// Generate spacing classes
+@each $key, $value in settings.$spacing-values {
+  @each $dir, $properties in $spacing-directions {
+    
+    // Padding classes
+    .p#{$dir}-#{$key} {
+      @if $dir == 'x' {
+        padding-left: $value;
+        padding-right: $value;
+      } @else if $dir == 'y' {
+        padding-top: $value;
+        padding-bottom: $value;
+      } @else {
+        padding#{$properties}: $value;
+      }
+    }
+    
+    // Margin classes
+    .m#{$dir}-#{$key} {
+      @if $dir == 'x' {
+        margin-left: $value;
+        margin-right: $value;
+      } @else if $dir == 'y' {
+        margin-top: $value;
+        margin-bottom: $value;
+      } @else {
+        margin#{$properties}: $value;
+      }
+    }
+    
+    // Negative margin classes (skip for 0)
+    @if $key != 0 {
+      .-m#{$dir}-#{$key} {
+        @if $dir == 'x' {
+          margin-left: -$value;
+          margin-right: -$value;
+        } @else if $dir == 'y' {
+          margin-top: -$value;
+          margin-bottom: -$value;
+        } @else {
+          margin#{$properties}: -$value;
+        }
+      }
+    }
+  }
+}
+
+// Auto margin utilities
+.m-auto { margin: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.my-auto { margin-top: auto; margin-bottom: auto; }
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }

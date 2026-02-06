@@ -1,0 +1,42 @@
+// ==========================================
+// FLEXBOX UTILITIES
+// ==========================================
+@use '../settings/' as settings;
+
+// Display
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+
+// Direction
+.flex-row { flex-direction: row; }
+.flex-row-reverse { flex-direction: row-reverse; }
+.flex-column { flex-direction: column; }
+.flex-column-reverse { flex-direction: column-reverse; }
+
+// Wrap
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+// Justify Content
+.justify-content-start { justify-content: flex-start; }
+.justify-content-end { justify-content: flex-end; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+.justify-content-evenly { justify-content: space-evenly; }
+
+// Align Items
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+.align-items-center { align-items: center; }
+.align-items-baseline { align-items: baseline; }
+.align-items-stretch { align-items: stretch; }
+
+// Gap
+
+@each $key, $value in settings.$spacing-values {
+  .gap-#{$key} { gap: $value; }
+  .gap-x-#{$key} { column-gap: $value; }
+  .gap-y-#{$key} { row-gap: $value; }
+}

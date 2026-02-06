@@ -33,14 +33,14 @@ export const routes: Routes = [
       },
       {
         path: MAIN_ROUTES.APPLICTIONS,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         data: RouteDataHelper.public(),
         loadComponent: () => import('../app/features/applications/applications').then((m) => m.Applications),
 
       },
        {
         path: MAIN_ROUTES.APPLICTION,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
          loadChildren: () =>
           import('../app/features/application/application.routes').then(
             (m) => m.ApplicationRoutes

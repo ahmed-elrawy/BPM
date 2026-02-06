@@ -1,0 +1,31 @@
+// ==========================================
+// VARIABLES - Define all project variables
+// ==========================================
+
+// Spacing values (used by utilities)
+$spacing-values: (
+  0: 0,
+  1: 0.25rem,  // 4px
+  2: 0.5rem,   // 8px
+  3: 1rem,     // 16px
+  4: 1.5rem,   // 24px
+  5: 2rem,     // 32px
+  6: 3rem,     // 48px
+  7: 4rem,     // 64px
+  8: 5rem      // 80px
+) !default;
+
+// Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// Base spacing unit
+$spacer: 1rem !default;
+
+// Colors (example)
+$primary-color: #007bff !default;
+$secondary-color: #6c757d !default;

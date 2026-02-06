@@ -1,0 +1,24 @@
+// ==========================================
+// MAIN SCSS ENTRY POINT
+// ==========================================
+
+// 1. Settings (variables)
+@use 'settings';
+
+// 2. Tools (functions, mixins)
+@use 'tools';
+
+// 3. Generic (resets, normalize) - optional
+// @use '3-generic';
+
+// 4. Elements (base HTML elements) - optional
+// @use '4-elements';
+
+// 5. Objects (layout patterns) - optional
+// @use '5-objects';
+
+// 6. Components (UI components) - optional
+// @use '6-components';
+
+// 7. Utilities (helper classes)
+@use 'utilities';
